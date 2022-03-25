@@ -20,9 +20,7 @@ def calculate_score(cards):
     return sum(cards)
 
 def compare(user_score, computer_score):
-
-
-    
+ 
     if user_score > 21 and computer_score > 21:
         return "You went over. You lose 😤"
     if user_score == computer_score:
@@ -43,7 +41,6 @@ def compare(user_score, computer_score):
 def play_game():
 
     print(logo)
-
     
     user_cards = []
     computer_cards = []
@@ -52,8 +49,6 @@ def play_game():
     for _ in range(2):
         user_cards.append(deal_card())
         computer_cards.append(deal_card())
-
-    
 
     while not is_game_over:
         
@@ -71,17 +66,14 @@ def play_game():
              user_cards.append(deal_card())
             else:
                 is_game_over = True
-
     
     while computer_score != 0 and computer_score < 17:
         computer_cards.append(deal_card())
         computer_score = calculate_score(computer_cards)
-
     print(f"   Your final hand: {user_cards}, final score: {user_score}")
     print(f"   Computer's final hand: {computer_cards}, final score: {computer_score}")
     print(compare(user_score, computer_score))
 
-
-while input("Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
+while input("Do you want to play a game of Blackjack? Type 'Yes' or 'No': ") == "yes":
     clear
     play_game()    
